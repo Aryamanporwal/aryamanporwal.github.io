@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hackathons - Aryaman Porwal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 32px 60px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    .hackathon {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hackathon h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .hackathon-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .hackathon p {
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      transition: transform 0.2s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Aryaman</a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" >Home</a>
+        <a href="hackathons.html" class="active">Hackathons</a>
+        <a href="projects.html">Projects</a>
+        <a href="social.html">Socials</a>
+        <a href="https://Aryamanporwal.github.io/cv/cv.pdf">CV</a>
+        <a href="skills.html" >Skills</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+<div class="page">
+  <h1>Hackathons</h1>
+
+  <!-- International Innovation Challenge -->
+  <div class="hackathon">
+    <h2>International Innovation Challenge 2.0</h2>
+    <div class="hackathon-meta">6th Rank · International Teams</div>
+    <p>
+      Developed <b>Agro AI</b>, an AI-powered chatbot and voice assistant using Agentic AI to assist farmers with agricultural practices, crop guidance, and decision support. Competing teams participated from across the nation and internationally.
+    </p>
+
+    <div class="image-grid">
+      <img src="images/iic_teams.jpeg" alt="International Innovation Challenge Team">
+      <img src="images/iic_prize.jpeg" alt="International Innovation Challenge Team">
+      <img src="images/iic_certificate.jpeg" alt="International Innovation Challenge Certificate">
+    </div>
+  </div>
+
+  <!-- Smart India Hackathon 2025 -->
+  <div class="hackathon">
+    <h2>Smart India Hackathon 2025</h2>
+    <div class="hackathon-meta">4th Position · <span style="background:var(--line); padding:4px 10px; border-radius:6px; font-size:0.8rem;">Team Lead</span></div>
+    <p>
+      Led the team to develop <b>Marine Voice</b>, a crowdsourced real-time data and alert platform for natural calamities, built for the Indian National Centre for Ocean Information Services (INCOIS). The platform was developed using MERN stack and Socket.IO for real-time communication.
+    </p>
+
+    <div class="image-grid">
+      <img src="images/sih2025_teams.jpeg" alt="SIH 2025 Team">
+      <img src="images/sih2025_certificate.jpeg" alt="SIH 2025 Certificate">
+    </div>
+  </div>
+
+  <!-- Smart India Hackathon 2024 -->
+  <div class="hackathon">
+    <h2>Smart India Hackathon 2024</h2>
+    <div class="hackathon-meta"><span style="background:var(--line); padding:4px 10px; border-radius:6px; font-size:0.8rem;">Team Lead</span></div>
+    <p>
+      Led the development of an online marketplace platform for farmers to directly connect with buyers and reduce middlemen profits. Built using the MERN stack with scalable backend architecture.
+    </p>
+
+    <div class="image-grid">
+      <img src="images/sih2024_team.jpeg" alt="SIH 2024 Team">
+      <img src="images/sih2024_certificate.jpeg" alt="SIH 2024 Certificate">
+    </div>
+  </div>
+
+  <!-- HackAgra -->
+  <div class="hackathon">
+    <h2>HackAgra</h2>
+    <div class="hackathon-meta">Participant · AI Agriculture Platform</div>
+    <p>
+      Developed <b>Farm AI</b>, a virtual community and negotiation platform for farmers where AI agents handled trade negotiations to ensure better pricing. Built using Agentic AI and the MERN stack.
+    </p>
+
+    <div class="image-grid">
+      <img src="images/hackarga_team.jpeg" alt="HackAgra Team">
+      <img src="images/hackagra_certificate.jpeg" alt="HackAgra Certificate">
+    </div>
+  </div>
+
+  <!-- Innotech 2025 -->
+  <div class="hackathon">
+    <h2>Innotech 2025</h2>
+    <div class="hackathon-meta">Participant · SRM Institute of Science and Technology Chennai</div>
+
+
+    <div class="image-grid">
+      <img src="images/innotech_certificate.jpeg" alt="HackAgra Certificate">
+    </div>
+  </div>
+
+  <footer>
+    Aryaman &middot; Computer Science &middot; GLA University
+  </footer>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+
+</body>
+</html>

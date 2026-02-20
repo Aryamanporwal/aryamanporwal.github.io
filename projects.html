@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects - Aryaman</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 32px 60px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    .project {
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .badges a {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: background 0.2s ease;
+    }
+
+    .badges a:hover {
+      background: var(--line);
+    }
+
+    .project img {
+      width: 47%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin-top: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.02);
+    }
+
+    ul {
+      margin-top: 12px;
+      padding-left: 18px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Aryaman</a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" >Home</a>
+        <a href="hackathons.html" >Hackathons</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="social.html">Socials</a>
+        <a href="https://Aryamanporwal.github.io/cv/cv.pdf">CV</a>
+        <a href="skills.html" >Skills</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+<div class="page">
+  <h1>Projects</h1>
+
+  <!-- Resumio -->
+  <div class="project">
+    <h2>Resumio</h2>
+    <div class="meta">February 2026 · AI-powered Resume Builder Platform</div>
+
+    <div class="badges">
+      <a href="https://github.com/Aryamanporwal/Resumio">GitHub</a>
+      <a href="https://resumio-io.vercel.app/">Live Demo</a>
+    </div>
+
+    <a href="https://resumio-io.vercel.app/">
+      <img src="images/resumio.png" alt="Resumio Project">
+    </a>
+
+    <ul>
+      <li>Developed a MERN-stack resume builder with authentication and secure MongoDB storage.</li>
+      <li>Integrated Google Gemini AI for automated resume optimization.</li>
+      <li>Built dynamic templates with live preview and shareable public links.</li>
+      <li>Integrated ImageKit for profile uploads and background removal.</li>
+      <li>Implemented one-click PDF export and online resume sharing.</li>
+    </ul>
+  </div>
+
+  <!-- Satranj
+  <div class="project">
+    <h2>Satranj</h2>
+    <div class="meta">January 2026 · Multiplayer Chess Platform</div>
+
+    <div class="badges">
+      <a href="https://github.com/Aryamanporwal/Satranj">GitHub</a>
+      <a href="YOUR_LIVE_LINK">Live Demo</a>
+    </div>
+
+    <a href="YOUR_LIVE_LINK">
+      <img src="images/satranj.png" alt="Satranj Chess Platform">
+    </a>
+
+    <ul>
+      <li>Built a real-time multiplayer chess platform using MERN and Socket.IO.</li>
+      <li>Implemented live chat for players and spectators.</li>
+      <li>Used DFS-based move validation to detect check, checkmate, and stalemate.</li>
+      <li>Optimized for 1000+ concurrent users with low latency.</li>
+    </ul>
+  </div> -->
+
+  <!-- ArogyaCompass -->
+  <div class="project">
+    <h2>ArogyaCompass</h2>
+    <div class="meta">July 2025 · Healthcare Management Platform</div>
+
+    <div class="badges">
+      <a href="https://github.com/Aryamanporwal/ArogyaCompass">GitHub</a>
+      <a href="https://arogyacompass.cloud">Live Demo</a>
+    </div>
+
+    <a href="https://arogyacompass.cloud">
+      <img src="images/arogyacompass.png" alt="ArogyaCompass Platform">
+    </a>
+
+    <ul>
+      <li>Built a healthcare platform with React, MongoDB, and Leaflet.js for geolocation-based appointments.</li>
+      <li>Implemented role-based access and secure medical record storage.</li>
+      <li>Integrated Razorpay subscriptions and Cloudinary document storage.</li>
+      <li>Added real-time alerts using Email + Twilio SMS.</li>
+      <li>Designed dashboards with D3.js for analytics and management.</li>
+    </ul>
+  </div>
+
+  <!-- FinBot -->
+  <div class="project">
+    <h2>FinBot</h2>
+    <div class="meta">December 2025 · AI Stock Market Platform</div>
+
+    <div class="badges">
+      <a href="https://github.com/Aryamanporwal/Finbot">GitHub</a>
+      <a href="https://finbot-gamma.vercel.app/">Live Demo</a>
+    </div>
+
+    <a href="https://finbot-gamma.vercel.app/">
+      <img src="images/finbot.png" alt="FinBot Stock Dashboard">
+    </a>
+
+    <ul>
+      <li>Developed real-time stock dashboard with interactive charts and industry filters.</li>
+      <li>Implemented watchlists, alerts, and intelligent search.</li>
+      <li>Built AI-driven summaries, sentiment analysis, and earnings notifications.</li>
+      <li>Used Inngest for event-driven workflows and automated reporting.</li>
+      <li>Admin dashboard for managing stocks, news, and user analytics.</li>
+    </ul>
+  </div>
+  <!-- MarineVoice -->
+  <div class="project">
+    <h2>MarineVoice</h2>
+    <div class="meta">August 2025 · Ocean Hazard Reporting Platform</div>
+
+    <div class="badges">
+      <a href="https://github.com/Aryamanporwal/MarineVoice">GitHub</a>
+      <a href="https://marineee.vercel.app/">Live Demo</a>
+    </div>
+
+    <a href="https://marineee.vercel.app/">
+      <img src="images/marinevoice.png" alt="MarineVoice Project">
+    </a>
+
+    <ul>
+      <li>Built a MERN-based hazard reporting system integrating Google Maps and Earth Engine.</li>
+      <li>Developed multilingual offline reporting with Firebase and FCM alerts.</li>
+      <li>Engineered scalable backend for geospatial data ingestion and alerting.</li>
+      <li>Followed Agile workflows and implemented logging and performance optimization.</li>
+    </ul>
+  </div>
+
+  <!-- ArenaMeet -->
+  <div class="project">
+    <h2>ArenaMeet</h2>
+    <div class="meta">July 2025 · Video Conferencing Platform</div>
+
+    <div class="badges">
+      <a href="https://github.com/ArogyaCompass/ArenaMeet">GitHub</a>
+      <a href="https://meeting-app-ecru-eight.vercel.app/">Live Demo</a>
+    </div>
+
+    <a href="https://meeting-app-ecru-eight.vercel.app/">
+      <img src="images/arenameet.png" alt="ArenaMeet Platform">
+    </a>
+
+    <ul>
+      <li>Built a full-stack meeting platform using Next.js, TypeScript, Appwrite, Clerk, Stream API.</li>
+      <li>Implemented scheduling, recording, and participant invitations.</li>
+      <li>Integrated Cloudinary for media sharing.</li>
+      <li>Optimized real-time sessions for 100+ concurrent users.</li>
+    </ul>
+  </div>
+
+
+  <footer>
+    Aryaman &middot; Computer Science &middot; GLA University
+  </footer>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+
+</body>
+</html>

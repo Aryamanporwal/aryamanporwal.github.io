@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aryaman | Socials</title>
+  <meta name="description" content="Aryaman - Coding activity, GitHub, LeetCode, developer stats.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    /* Social Hero */
+    .social-hero {
+      padding: 100px 32px 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .social-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .social-hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 720px;
+    }
+
+    /* Cards */
+    .social-card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 28px;
+      border-radius: 16px;
+      margin-top: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .social-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+
+    .leetcode-card {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 420px; 
+        border-radius: 12px;
+        border: 1px solid var(--line);
+    }
+    .codeforce-card {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 420px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+    }
+
+    .stats {
+    display: flex;
+    gap: 10px; /* less gap */
+    flex-wrap: wrap;
+    margin-top: 10px;
+    }
+
+   .stat-box {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    border-radius: 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    }
+
+    .stat-box strong {
+    display: block;
+    font-size: 0.95rem; /* smaller number */
+    font-weight: 600;
+    margin-top: 2px;
+    }
+
+    .activity-img {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .badges img {
+      width: 60px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .profile-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .profile-links a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 0.8rem;
+      background: var(--paper);
+      color: var(--muted);
+      transition: 0.25s;
+    }
+
+    .profile-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+  </style>
+</head>
+    <script>
+    async function loadGitHub() {
+    const username = "Aryamanporwal";
+
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    const data = await res.json();
+
+    document.getElementById("gh-repos").innerText = data.public_repos;
+    document.getElementById("gh-followers").innerText = data.followers;
+    document.getElementById("gh-gists").innerText = data.public_gists;
+
+    // Contribution Graph (GitHub SVG)
+    document.getElementById("gh-graph").src =
+        `https://ghchart.rshah.org/${username}`;
+    }
+
+    loadGitHub();
+    </script>
+
+    <script src="leetcode.js"></script>
+
+    <script>
+        async function loadCodeforces() {
+        const username = "aryamanporwal";
+
+        // Profile info
+        const res = await fetch(`https://codeforces.com/api/user.info?handles=${username}`);
+        const data = await res.json();
+        const user = data.result[0];
+
+        document.getElementById("cf-rating").innerText = user.rating || "Unrated";
+        document.getElementById("cf-rank").innerText = user.rank || "N/A";
+        document.getElementById("cf-max-rating").innerText = user.maxRating || "N/A";
+        document.getElementById("cf-max-rank").innerText = user.maxRank || "N/A";
+
+        // Activity graph (public CF graph image)
+        document.getElementById("cf-graph").src =
+            `https://codeforces-readme-stats.vercel.app/api/card?username=${username}&theme=dark`;
+        }
+
+        loadCodeforces();
+    </script>
+
+
+
+<body>
+
+<!-- NAVBAR (EXACT COPY) -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Aryaman</a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="hackathons.html">Hackathons</a>
+        <a href="projects.html">Projects</a>
+        <a href="social.html" class="active">Socials</a>
+        <a href="https://Aryamanporwal.github.io/cv/cv.pdf">CV</a>
+        <a href="skills.html">Skills</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- SOCIAL HERO -->
+<section class="social-hero">
+  <h1>Coding Activity & Developer Profiles</h1>
+  <p>
+    A snapshot of my problem-solving journey, coding consistency, and open-source contributions.
+    (Static preview — real-time integrations coming soon)
+  </p>
+
+  <!-- GitHub -->
+    <div class="social-card">
+    <h2>GitHub Contributions</h2>
+
+    <div class="stats">
+        <div class="stat-box">Repositories<strong id="gh-repos">Loading...</strong></div>
+        <div class="stat-box">Followers<strong id="gh-followers">Loading...</strong></div>
+        <div class="stat-box">Public Gists<strong id="gh-gists">Loading...</strong></div>
+    </div>
+
+    <img id="gh-graph" class="activity-img" />
+
+    <div class="profile-links">
+        <a href="https://github.com/Aryamanporwal">GitHub Profile</a>
+    </div>
+    </div>
+
+  <!-- LeetCode -->
+
+    <div class="social-card">
+        <h2>LeetCode Problem Solving</h2>
+
+        <div class="stats leetcode-stats">
+            <div class="stat-box">Solved<strong id="lc-total">Loading...</strong></div>
+            <div class="stat-box">Easy<strong id="lc-easy">Loading...</strong></div>
+            <div class="stat-box">Medium<strong id="lc-medium">Loading...</strong></div>
+            <div class="stat-box">Hard<strong id="lc-hard">Loading...</strong></div>
+        </div>
+
+        <!-- Activity Graph -->
+        <img class = "leetcode-card" src="https://leetcard.jacoblin.cool/aryaman123?theme=dark&font=Work%20Sans&ext=heatmap">
+        <div class="profile-links">
+            <a href="https://leetcode.com/aryaman123" target="_blank">LeetCode Profile</a>
+        </div>
+    </div>
+
+    <!-- Codeforces -->
+    <div class="social-card">
+        <h2>Codeforces Competitive Programming</h2>
+
+        <div class="stats">
+            <div class="stat-box">Rating<strong id="cf-rating">Loading...</strong></div>
+            <div class="stat-box">Rank<strong id="cf-rank">...</strong></div>
+            <div class="stat-box">Max Rating<strong id="cf-max-rating">...</strong></div>
+            <div class="stat-box">Max Rank<strong id="cf-max-rank">...</strong></div>
+        </div>
+
+        <img id="cf-graph" class="codeforce-card" />
+
+        <div class="profile-links">
+            <a href="https://codeforces.com/profile/aryamanporwal">Codeforces Profile</a>
+        </div>
+    </div>
+
+
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  Aryaman &middot; Computer Science &middot; GLA University
+</footer>
+
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+
+</body>
+</html>
