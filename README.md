@@ -1,8 +1,8 @@
-# aryaman.github.io
+# aryamanporwal.github.io
 
 Personal website for Aryaman - BTech Undergraduate, Computer Science, GLA University.
 
-**Live site:** https://aryaman.github.io
+**Live site:** https://aryamanporwal.github.io
 
 ## Structure
 
